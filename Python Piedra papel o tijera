@@ -1,0 +1,62 @@
+import random
+import time
+
+def jugar_piedra_papel_tijera():
+
+    """
+    Función principal que encapsula la lógica del juego.
+    Implementa estructuras repetitivas para mantener el juego activo
+    hasta que el usuario decida salir.
+    """
+    
+    opciones = ["piedra", "papel", "tijera"]
+    
+    puntos_usuario = 0
+    puntos_pc = 0
+    
+    print("------------------------------------------------")
+    print(" Bienvenido a Piedra, Papel o Tijera - Versión Python")
+    print("------------------------------------------------")
+
+
+    while True:
+        
+        print(f"\nMarcador Actual -> Tú: {puntos_usuario} | CPU: {puntos_pc}")
+        entrada_usuario = input("Elige (piedra, papel, tijera) o 'salir' para terminar: ").lower()
+
+
+        if entrada_usuario == 'salir':
+            print("\n¡Gracias por jugar!")
+            print(f"Resultado Final -> Tú: {puntos_usuario} | CPU: {puntos_pc}")
+            break
+        
+ 
+        if entrada_usuario not in opciones:
+            print("❌ Error: Por favor escribe una opción válida.")
+            continue 
+
+
+        eleccion_pc = random.choice(opciones)
+        
+        print(f"⏳ La CPU está eligiendo...")
+        time.sleep(1) 
+        print(f"🥊 Tú: {entrada_usuario.upper()}  vs  CPU: {eleccion_pc.upper()}")
+
+
+        if entrada_usuario == eleccion_pc:
+            print("result: 🟡 ¡Es un EMPATE!")
+        
+        elif (entrada_usuario == "piedra" and eleccion_pc == "tijera") or \
+             (entrada_usuario == "papel" and eleccion_pc == "piedra") or \
+             (entrada_usuario == "tijera" and eleccion_pc == "papel"):
+            print("result: 🟢 ¡GANASTE esta ronda!")
+            puntos_usuario += 1
+            
+        else:
+            print("result: 🔴 ¡PERDISTE esta ronda!")
+            puntos_pc += 1
+
+
+if __name__ == "__main__":
+    jugar_piedra_papel_tijera()
+    
