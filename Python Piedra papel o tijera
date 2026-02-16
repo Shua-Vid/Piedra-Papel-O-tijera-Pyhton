@@ -32,15 +32,15 @@ def jugar_piedra_papel_tijera():
         
  
         if entrada_usuario not in opciones:
-            print("❌ Error: Por favor escribe una opción válida.")
+            print("Error: Por favor escribe una opción válida.")
             continue 
 
 
         eleccion_pc = random.choice(opciones)
         
-        print(f"⏳ La CPU está eligiendo...")
+        print(f"La CPU está eligiendo...")
         time.sleep(1) 
-        print(f"🥊 Tú: {entrada_usuario.upper()}  vs  CPU: {eleccion_pc.upper()}")
+        print(f"Tú: {entrada_usuario.upper()}  vs  CPU: {eleccion_pc.upper()}")
 
 
         if entrada_usuario == eleccion_pc:
