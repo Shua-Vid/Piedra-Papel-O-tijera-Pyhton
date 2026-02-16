@@ -44,16 +44,16 @@ def jugar_piedra_papel_tijera():
 
 
         if entrada_usuario == eleccion_pc:
-            print("result: 🟡 ¡Es un EMPATE!")
+            print("result:  ¡Es un EMPATE!")
         
         elif (entrada_usuario == "piedra" and eleccion_pc == "tijera") or \
              (entrada_usuario == "papel" and eleccion_pc == "piedra") or \
              (entrada_usuario == "tijera" and eleccion_pc == "papel"):
-            print("result: 🟢 ¡GANASTE esta ronda!")
+            print("result:  ¡GANASTE esta ronda!")
             puntos_usuario += 1
             
         else:
-            print("result: 🔴 ¡PERDISTE esta ronda!")
+            print("result:  ¡PERDISTE esta ronda!")
             puntos_pc += 1
 
 
